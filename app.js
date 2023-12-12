@@ -10,11 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 
 const PORT = 3000;
 
-if (!process.env.MONGODB_URI) {
-  console.error('Please set the MONGO_URI environment variable.');
-  process.exit(1);
-}
-
 connectDB();
 
 app.get('/', (req, res) => {
