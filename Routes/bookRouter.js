@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     res.json(books);
   } catch (error) {
     console.error('Error retrieving books:', error.message);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send(error.message);
   }
 });
 
@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     res.json(newBook);
   } catch (error) {
     console.error('Error adding a new book:', error.message);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send(error.message);
   }
 });
 
@@ -30,7 +30,7 @@ router.put('/:id', async (req, res) => {
     res.json(updatedBook);
   } catch (error) {
     console.error(`Error updating book with ID ${bookId}:`, error.message);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send(error.message);
   }
 });
 
